@@ -24,11 +24,14 @@ class ViewController: UIViewController ,UITableViewDataSource{
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ItemTableViewCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         items = readItems()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         items = readItems()
         tableView.reloadData()
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -70,7 +73,15 @@ class ViewController: UIViewController ,UITableViewDataSource{
             tableView.reloadData()
         }
     }
- 
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //セルの選択解除
+        tableView.deselectRow(at: indexPath, animated: true)
+            
+        //ここに遷移処理を書く
+        self.present(EditViewController(), animated: true, completion: nil)
+    }
+   
 
     
 }
