@@ -34,11 +34,6 @@ class ViewController: UIViewController ,UITableViewDataSource{
 
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          edit_data  = self.items[indexPath.row]
-          
-          self.performSegue(withIdentifier: "toNewItemView", sender: nil)
-      }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
