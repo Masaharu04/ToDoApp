@@ -16,7 +16,6 @@ class ViewController: UIViewController ,UITableViewDataSource{
     
     var items: [TodoItem] = []
     var edit_data: TodoItem?
-        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +53,7 @@ class ViewController: UIViewController ,UITableViewDataSource{
         return Array(realm.objects(TodoItem.self))
     }
     
+ 
    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
@@ -70,7 +70,7 @@ class ViewController: UIViewController ,UITableViewDataSource{
             tableView.reloadData()
         }
     }
-   
-    
+ 
+
     
 }
